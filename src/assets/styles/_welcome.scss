@@ -1,0 +1,24 @@
+.welcomeTop {
+  .topic {
+    color: #000;
+    font-family: "Raleway", sans-serif;
+  }
+  @media (max-width: 576px) {
+    .topic {
+      font-size: 2em;
+    }
+    .photoCredit {
+      font-size: 1em;
+    }
+  }
+  .welcome {
+    width: 100%;
+    height: auto;
+  }
+  .photoCredit {
+    font-weight: 500;
+    position: relative;
+    text-align: end;
+    margin-right: 3em;
+  }
+}
