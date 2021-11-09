@@ -7,13 +7,13 @@ const Welcome: React.FC = () =>{
     return (
     <React.Fragment >
       <Col className={"welcomeTop "}>
-      <Row>
-      <h1 className={"topic"}>My Library</h1>
+      <Row  xs={12}>
+      <h1 className={"topic text-center my-2"}>My Library</h1>
       </Row>
       <Row xs={12} className={"mx-0 px-0"}>
         <img src={WelcomeLibrary} className={"welcome"} alt={"Library"}></img>
       </Row>
-      <Row className={"text-end"}>
+      <Row  xs={12} className={"text-end"}>
        <p className={"photoCredit"}>Photo By<a
                   href="https://unsplash.com/@annahunko?utm_source=unsplash&utm_medium=referral&utm_
                     content=creditCopyText"
