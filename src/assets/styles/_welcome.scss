@@ -1,7 +1,6 @@
 .welcomeTop {
   .topic {
     color: #243639;
-    font-family: "Raleway", sans-serif;
     margin-top: 1em;
     margin-bottom: 1em;
   }
@@ -12,15 +11,18 @@
     .photoCredit {
       font-size: 1em;
     }
-  }
-  .welcome {
-    width: 100%;
-    height: auto;
-  }
-  .photoCredit {
-    font-weight: 500;
-    position: relative;
-    text-align: end;
-    margin-right: 3em;
+    .welcome {
+      width: 100%;
+      height: auto;
+      padding: 0;
+      padding-left: 0;
+      margin: 0;
+    }
+    .photoCredit {
+      font-weight: 500;
+      position: relative;
+      text-align: end;
+      margin-right: 3em;
+    }
   }
 }
