@@ -9,7 +9,7 @@ const AuthorUi: React.FC = () => {
     <React.Fragment>
       <Row className="m-0 p-0">
         <Col className="author p-0 m-0">
-          <div className="h1">
+          <div className="h1 mb-4">
             <h3>Authors</h3>
           </div>
           <div>
