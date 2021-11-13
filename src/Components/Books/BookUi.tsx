@@ -1,27 +1,23 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { Plus } from "react-feather";
-import AuthorForm from "./AuthorForm";
-import AuthorList from "./AuthorList";
+import BookList from "./BookList";
 
-const AuthorUi: React.FC = () => {
+const BookUi: React.FC = () => {
   return (
     <React.Fragment>
       <Row>
         <Col className="author p-0 m-0">
           <div className="h1 mr-3 px-0 pr-3">
-            <h3>Authors</h3>
+            <h3>Books</h3>
           </div>
           <div>
-            <AuthorList />
+            <BookList />
           </div>
-          <div className="addAuthor">
+          <div className="addBook">
             <h5>
-              <Plus className="plusIcon" /> Add Author
+              <Plus className="plusIcon" /> Add Book
             </h5>
-          </div>
-          <div>
-            <AuthorForm />
           </div>
         </Col>
       </Row>
@@ -29,4 +25,4 @@ const AuthorUi: React.FC = () => {
   );
 };
 
-export default AuthorUi;
+export default BookUi;

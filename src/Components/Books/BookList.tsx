@@ -1,10 +1,22 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { Edit, Trash2 } from "react-feather";
 
 const BookList: React.FC = () => {
   return (
-    <React.Fragment>
-      <h5>Book</h5>
-    </React.Fragment>
+    <Container className="p-0">
+      <Row className="m-0 p-0">
+        <Col xs={10} className="m-0  p-0">
+          <div className="authorMainList px-0 mx-0">
+            <h5 className="authorList">Book</h5>
+          </div>
+        </Col>
+        <Col xs={2} className="icons">
+          <Edit className="icons text-warning mx-2" size={20} />
+          <Trash2 className="icons text-danger mx-2" size={20} />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
