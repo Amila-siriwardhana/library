@@ -8,7 +8,7 @@ const AuthorList: React.FC = () => {
       <Row className="m-0 p-0">
         <Col xs={10} className="m-0  p-0">
           <div className="authorMainList px-0 mx-0">
-            <h5 className="authorList">Author</h5>
+            <h5 className="authorList">1.Author</h5>
           </div>
         </Col>
         <Col xs={2} className="icons">

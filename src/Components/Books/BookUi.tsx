@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { Plus } from "react-feather";
 import BookList from "./BookList";
+import BookForm from "./BookForm";
 
 const BookUi: React.FC = () => {
   return (
@@ -14,11 +15,14 @@ const BookUi: React.FC = () => {
           <div>
             <BookList />
           </div>
-          <div className="addBook">
+          <div className="addAuthor">
             <h5>
               <Plus className="plusIcon" /> Add Book
             </h5>
           </div>
+          <Row>
+            <BookForm />
+          </Row>
         </Col>
       </Row>
     </React.Fragment>
