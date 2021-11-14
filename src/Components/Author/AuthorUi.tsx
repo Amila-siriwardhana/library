@@ -7,18 +7,21 @@ import AuthorList from "./AuthorList";
 const AuthorUi: React.FC = () => {
   return (
     <React.Fragment>
-      <Row>
+      <Row className="m-0 p-0">
         <Col className="author p-0 m-0">
           <div className="h1 mr-3 px-0 pr-3">
             <h3>Authors</h3>
           </div>
           <div>
-            <AuthorList />
+            <Author />
           </div>
-          <div className="addAuthor">
-            <h5>
+          <div>
+            <h5 className="authorButton">
               <Plus className="plusIcon" /> Add Author
             </h5>
+            <div>
+              <AuthorForm />
+            </div>
           </div>
           <div>
             <AuthorForm />

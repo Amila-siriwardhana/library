@@ -5,15 +5,13 @@
     text-align: start;
     border-bottom: 1px solid #000;
     padding-right: 2em;
-
     display: block;
     border-right: 2em;
   }
-  .addAuthor {
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
   .plusIcon {
-    color: #0c493e;
+    color: #184485;
+  }
+  .authorButton {
+    cursor: pointer;
   }
 }
