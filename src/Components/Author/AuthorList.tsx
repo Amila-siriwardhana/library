@@ -4,14 +4,11 @@ import { Edit, Trash2 } from "react-feather";
 
 const AuthorList: React.FC = () => {
   return (
-    <Container fluid={true}>
-      <Row>
-        <Col xs={10} className="mx-0  px-0">
+    <Container className="p-0">
+      <Row className="m-0 p-0">
+        <Col xs={10} className="m-0  p-0">
           <div className="authorMainList px-0 mx-0">
-            <h5 className="authorList">Author</h5>
-            <h5 className="authorList">Author</h5>
-            <h5 className="authorList">Author</h5>
-            <h5 className="authorList">Author</h5>
+            <h5 className="authorList">1.Author</h5>
           </div>
         </Col>
         <Col xs={2} className="icons">

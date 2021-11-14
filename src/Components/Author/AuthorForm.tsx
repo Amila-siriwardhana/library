@@ -6,14 +6,14 @@ const AuthorForm: React.FC = () => {
   return (
     <Container className="p-0 m-0">
       <Row className="p-0 m-0">
-        <Col xs={9} className="p-0">
+        <Col xs={8} className="p-0 m-0">
           <h5 className=" m-0 p-0 ">
-            <span className="authorTopic p-0">Create Author </span>{" "}
-            <XCircle className="closeButton float-end p-0 m-0" />
+            <span className="authorTopic ">Create Author </span>
+            <XCircle className="closeButton float-end p-0 m-3" />
           </h5>
 
-          <form className="py-3">
-            <div className="form-group">
+          <form className=" form py-3 mx-3">
+            <div className="form-group ">
               <label className="lable">Name of Author</label>
               <input
                 className="form-control p-0 m-0"
