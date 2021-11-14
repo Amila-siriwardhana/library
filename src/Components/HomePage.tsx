@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import AuthorUi from "./Author/AuthorUi";
+import BookUi from "./Books/BookUi";
 import Welcome from "./Welcome";
 
 const HomePage: React.FC = () => {
@@ -10,8 +11,10 @@ const HomePage: React.FC = () => {
         <Welcome />
       </Row>
       <Row>
-        <Col></Col>
-        <Col>
+        <Col className="mx-5">
+          <BookUi />
+        </Col>
+        <Col className="mx-5">
           <AuthorUi />
         </Col>
       </Row>

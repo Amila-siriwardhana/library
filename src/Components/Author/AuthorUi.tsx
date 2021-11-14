@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { Plus } from "react-feather";
+import AuthorForm from "./AuthorForm";
 import AuthorList from "./AuthorList";
 
 const AuthorUi: React.FC = () => {
@@ -8,7 +9,7 @@ const AuthorUi: React.FC = () => {
     <React.Fragment>
       <Row>
         <Col className="author p-0 m-0">
-          <div className="h1">
+          <div className="h1 mr-3 px-0 pr-3">
             <h3>Authors</h3>
           </div>
           <div>
@@ -18,6 +19,9 @@ const AuthorUi: React.FC = () => {
             <h5>
               <Plus className="plusIcon" /> Add Author
             </h5>
+          </div>
+          <div>
+            <AuthorForm />
           </div>
         </Col>
       </Row>
