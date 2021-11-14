@@ -13,7 +13,7 @@ const AuthorUi: React.FC = () => {
             <h3>Authors</h3>
           </div>
           <div>
-            <Author />
+            <AuthorList />
           </div>
           <div>
             <h5 className="authorButton">
@@ -22,9 +22,6 @@ const AuthorUi: React.FC = () => {
             <div>
               <AuthorForm />
             </div>
-          </div>
-          <div>
-            <AuthorForm />
           </div>
         </Col>
       </Row>
