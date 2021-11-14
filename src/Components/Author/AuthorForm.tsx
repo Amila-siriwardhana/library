@@ -11,7 +11,6 @@ const AuthorForm: React.FC = () => {
             <span className="authorTopic ">Create Author </span>
             <XCircle className="closeButton float-end p-0 m-3" />
           </h5>
-
           <form className=" form py-3 mx-3">
             <div className="form-group ">
               <label className="lable">Name of Author</label>
