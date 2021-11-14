@@ -1,9 +1,8 @@
 import React from "react";
 import { Col, Row, Container } from "react-bootstrap";
-import BookUi from "./Books/BookUi";
+import Welcome from "./Welcome";
 import AuthorUi from "./Author/AuthorUi";
 import BookUi from "./Books/BookUi";
-import Welcome from "./Welcome";
 
 const HomePage: React.FC = () => {
   return (
