@@ -7,7 +7,7 @@ const Welcome: React.FC = () => {
     <React.Fragment>
       <Col className="welcomeTop p-0 m-0">
         <Row className="m-0 p-0">
-          <h1 className="topic text-center ">My Library</h1>
+          <h1 className="welcometopic text-center ">My Library</h1>
         </Row>
         <Row className="mx-0 pl-0 pr-0">
           <img
