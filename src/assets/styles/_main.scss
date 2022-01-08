@@ -2,8 +2,11 @@
   padding-left: 0;
   padding-right: 0;
   margin: 0;
+}
+.font-link {
   font-family: "Raleway", sans-serif;
 }
+
 @import "~bootstrap/scss/bootstrap";
 @import "../styles/welcome";
 @import "../styles/authorUi";

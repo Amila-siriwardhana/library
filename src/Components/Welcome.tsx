@@ -7,7 +7,7 @@ const Welcome: React.FC = () => {
     <React.Fragment>
       <Col className="welcomeTop p-0 m-0">
         <Row className="m-0 p-0">
-          <h1 className="welcometopic text-center ">My Library</h1>
+          <h1 className="welcometopic text-center mt-2 mb-3 ">My Library</h1>
         </Row>
         <Row className="mx-0 pl-0 pr-0">
           <img
@@ -16,7 +16,7 @@ const Welcome: React.FC = () => {
             alt={"Library"}
           ></img>
         </Row>
-        <Row className="text-end mx-0 px-0">
+        <Row className="text-end me-5 pe-4 ">
           <p className="photoCredit">
             Photo By
             <a
@@ -25,7 +25,7 @@ const Welcome: React.FC = () => {
               rel="noreferrer"
               target="_blank"
             >
-              Anna Hunko{" "}
+              {" "}Anna Hunko{" "}
             </a>
             on{" "}
             <a

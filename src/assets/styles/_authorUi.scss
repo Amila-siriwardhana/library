@@ -3,15 +3,21 @@
   text-align: start;
   .h1 {
     text-align: start;
-    border-bottom: 1px solid #000;
+    border-bottom: 2px solid #000;
     padding-right: 2em;
     display: block;
     border-right: 2em;
+    border-bottom-color: #2b2f32;
+    text-decoration-color: #2a2e33;
   }
   .plusIcon {
     color: #184485;
   }
-  .authorButton {
+  .addButton {
     cursor: pointer;
+  }
+  h1{
+    font-weight: initial;
+    text-decoration-color: #2a2e33;
   }
 }
