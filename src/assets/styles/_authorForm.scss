@@ -1,13 +1,28 @@
 .authorTopic {
   text-align: start;
-  text-decoration: underline;
   color: #034c39;
+  border-bottom: 2px solid #034c39;
+}
+.form-control{
+  border-radius: 0px;
 }
 .closeButton {
   cursor: pointer;
   padding: 0%;
   margin: 0%;
+  color: #1c1c1c;
+
 }
 .lable {
   font-size: 0.7rem;
+}
+.button{
+  background-color: #035799;
+  border-radius: 10px;
+  text-decoration: #d7fcff;
+}
+select-control__control {
+  height: calc(1.5em + 0.5rem);
+  min-height: calc(1.5em + 0.5rem);
+  align-content: center;
 }
