@@ -4,6 +4,7 @@ import Welcome from "./Welcome";
 import AuthorUi from "./Author/AuthorUi";
 import BookUi from "./Books/BookUi";
 import {IAuthor, option} from "../Types";
+import {nanoid} from "nanoid";
 
 
 
@@ -17,6 +18,7 @@ const HomePage: React.FC<HomePageProps> = (props) => {
     const [editAuthor , setEditAuthor]=useState<IAuthor | null>(null);
     const [indexToEdit , setIndexToEdit] = useState<number | null>(null);
     const[showForm , setShowForm] = useState(false);
+    const [authorValue , setAuthorValue ] = useState<string>("");
 
 
     const formShow = (show:boolean) => {
@@ -37,13 +39,14 @@ const HomePage: React.FC<HomePageProps> = (props) => {
 
 
 
-    const createAuthor=(name: string   )=> {
-        console.log(indexToEdit);
+    const createAuthor=(name: string  )=> {
         let newAuthor = author?.slice() ?? [];
+        let id=nanoid();
         if (indexToEdit===null) {
-            newAuthor.push({name: name});
+            newAuthor.push({name: name , id:id});
         } else {
-        newAuthor.splice(indexToEdit , 1 , {name: name})
+        // newAuthor.splice(indexToEdit , 1 , {name: name})
+            newAuthor[indexToEdit].name=name;
             setIndexToEdit(null);
 
         }
@@ -78,7 +81,8 @@ const HomePage: React.FC<HomePageProps> = (props) => {
           <AuthorUi
               createAuthor={createAuthor} author={author} handleEditAuthor={handleEditAuthor}
               editAuthor={editAuthor} formShow={formShow} showForm={showForm}
-              setEditAuthor={setEditAuthor} setIndexToEdit={setIndexToEdit}
+              setEditAuthor={setEditAuthor} setIndexToEdit={setIndexToEdit} authorValue={authorValue}
+              setAuthorValue={setAuthorValue}
           />
         </Col>
       </Row>

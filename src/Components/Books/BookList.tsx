@@ -22,7 +22,8 @@ const BookList: React.FC<BookListProps> = (props) => {
             {
                 bookName?.map((oneBook,index)=>{
                     return(
-                        < Book oneBook={oneBook} index={index} getIndexToEdit={getIndexToEdit} formShow={formShow} deleteBook={deleteBook}/>
+                        < Book oneBook={oneBook} index={index} getIndexToEdit={getIndexToEdit} formShow={formShow}
+                               deleteBook={deleteBook}/>
                     )
                 })
             }

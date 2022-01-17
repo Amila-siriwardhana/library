@@ -19,10 +19,12 @@ const AuthorForm: React.FC<AuthorFormProps> = (props) => {
     const [formValidate, setFormValidate] = useState<boolean>(false);
 
 
+
     useEffect(()=>{
         if(editAuthor){
-            setAuthorValue(editAuthor.name)
+            setAuthorValue(editAuthor.name);
         }
+
 
     },[editAuthor])
 
@@ -31,16 +33,17 @@ const AuthorForm: React.FC<AuthorFormProps> = (props) => {
 
     const handleOnSubmit = (e: FormEvent) => {
         e.preventDefault();
-        if(authorValue) {
+        if(authorValue && editAuthor) {
             createAuthor(authorValue);
+            formShow(false);
 
-        }else{
+        }else if (authorValue){
+            createAuthor(authorValue);
+            setAuthorValue("");
+            setFormValidate(false);
+        }else {
             setFormValidate(true);
         }
-        setAuthorValue("");
-        formShow(false);
-
-
     }
 
     const handleAuthor = (e:ChangeEvent<HTMLInputElement>) =>{
@@ -65,8 +68,8 @@ const AuthorForm: React.FC<AuthorFormProps> = (props) => {
             </Row>
           <Form  noValidate validated={formValidate} onSubmit={handleOnSubmit} className=" form py-3 mx-3">
               <Form.Group>
-                  <Form.Label className="label">Name of Author </Form.Label>
-                  <Form.Control size="sm" required type="text" aria-required  onChange={handleAuthor} value={authorValue }/>
+                  <Form.Label className="label mb-0">Name of Author </Form.Label>
+                  <Form.Control size="sm" required type="text" aria-required onChange={handleAuthor} value={authorValue }/>
                   <Form.Control.Feedback type="invalid" >
                       Please enter Author Name
                   </Form.Control.Feedback>

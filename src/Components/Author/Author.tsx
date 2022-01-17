@@ -14,7 +14,8 @@ type AuthorProps={
 
 const Author: React.FC<AuthorProps> = (props) => {
     const {oneAuthor, index , handleEditAuthor , formShow}=props;
-    console.log(oneAuthor.name);
+
+
 
 
 
@@ -22,7 +23,7 @@ const Author: React.FC<AuthorProps> = (props) => {
     <Row className="authors m-0 p-0 py-1 flex align-items-center ">
       <Col xs={10} className="m-0 my-2  p-0">
         <div className=" px-0 mx-0">
-          <h5 className=" m-0 p-0">0{index+1}.{oneAuthor.name}</h5>
+          <h5 className=" m-0 p-0">{index+1}. {oneAuthor.name}</h5>
         </div>
       </Col>
       <Col xs={2} className="icons py-0 my-0 d-flex justify-content-end">
@@ -33,7 +34,7 @@ const Author: React.FC<AuthorProps> = (props) => {
         <Trash2 className="icons text-danger mx-2 my-0" size={20} onClick={()=>{
             Swal.fire({
                 title: 'Are you sure?',
-                text: 'You won\'t be able to revert this!',
+                text: `Do you want to delete ${oneAuthor.name} ?`,
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
