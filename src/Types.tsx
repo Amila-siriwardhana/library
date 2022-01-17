@@ -1,11 +1,12 @@
 export interface IAuthor {
-    name: string
+    name: string;
+    id:string;
 }
 
 export interface IBook {
     name: string;
     price: string;
-    author: string;
+    author: IAuthor;
 }
 export enum option{
     edit,

@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { Plus } from "react-feather";
 import BookList from "./BookList";
 import BookForm from "./BookForm";
-import {IAuthor , IBook } from "../../Types";
+import {IAuthor, IBook, ISelector} from "../../Types";
 
 
 
@@ -19,29 +19,26 @@ const BookUi: React.FC<BookUiProps> = (props) => {
   const [editValue , setEditValue] = useState<IBook | null>(null);
   const [bookValue , setBookValue]= useState<string>("");
   const [bookPriceValue , setBookPriceValue]= useState<string >(" ");
-  const [bookAuthorValue , setBookAuthorValue]= useState< string  >("");
+  const [bookAuthorValue , setBookAuthorValue]= useState< IAuthor | null  >(null);
 
 
-  console.log(indexToEdit);
-  const addBookForm = (select:boolean)=>{
-    setEditValue(null);
-    setShowForm(select);
-  }
+console.log(bookAuthorValue);
+
   const formShow = (select:boolean) => {
     setShowForm(select);
   }
 
-  const handleBookName=(name:string, price:string , authors:string)=>{
+  const handleBookName=(book:IBook)=>{
     const newBook= bookName? bookName.slice() : [];
     if (indexToEdit==null){
-      newBook.push({name: name , price:price , author:authors})
+      newBook.push(book)
     }else{
-      newBook.splice(indexToEdit , 1 , {name: name , price:price , author:authors})
+      newBook.splice(indexToEdit , 1 , book)
       setIndexToEdit(null);
     }
 
     setBookName(newBook);
-    console.log(newBook);
+
   }
 
   const getIndexToEdit=(editIndex:number)=>{
@@ -61,13 +58,13 @@ const BookUi: React.FC<BookUiProps> = (props) => {
   const clearForm=()=>{
     setBookValue("");
     setBookPriceValue("");
-    setBookAuthorValue("");
+    setBookAuthorValue(null);
     setIndexToEdit(null);
     setEditValue(null);
     formShow(true);
   }
 
-console.log(editValue);
+
 
   return (
     <React.Fragment>
@@ -77,11 +74,14 @@ console.log(editValue);
             <h1>Books</h1>
           </div>
           <div className="mb-3 ml-0 ">
-            {bookName?.length ? <BookList  bookName={bookName} getIndexToEdit={getIndexToEdit} formShow={formShow} deleteBook={deleteBook}/>: <h3>no elements</h3>}
+            {bookName?.length ? <BookList  bookName={bookName} getIndexToEdit={getIndexToEdit} formShow={formShow}
+                                           deleteBook={deleteBook}/>: <p className={"noItemLabel"}>
+              <i>No books listed here</i>
+            </p>}
           </div>
           <div onClick={()=>clearForm()} >
             <h5 className="addButton mb-4 mt-2">
-              <Plus className="plusIcon pb-1" /> Add Book
+              <Plus className="plusIcon pb-1 me-1" /> Add Book
             </h5>
           </div>
           <Row>

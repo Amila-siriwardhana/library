@@ -8,14 +8,14 @@ import {IAuthor, IBook, ISelector} from "../../Types";
 type BookFormProps = {
     author:IAuthor [] | null;
     formShow:(select:boolean)=>void;
-    handleBookName:(name:string, price:string , authors:string)=>void;
+    handleBookName:(book:IBook)=>void;
     editValue:IBook | null;
     bookValue:string | " ";
     bookPriceValue:string | " ";
-    bookAuthorValue:string | " ";
+    bookAuthorValue:IAuthor | null;
     setBookValue:(name:string | " ")=>void;
     setBookPriceValue:(name:string | " ")=>void;
-    setBookAuthorValue:(name:string | " ")=>void;
+    setBookAuthorValue:(author:IAuthor)=>void;
 
 
 }
@@ -49,6 +49,7 @@ const BookForm: React.FC<BookFormProps> = (props) => {
 
     },[editValue])
 
+
     const handleOnSubmit = (e: FormEvent ) => {
         e.preventDefault();
         if(!bookValue || !bookPriceValue || !bookAuthorValue){
@@ -58,7 +59,7 @@ const BookForm: React.FC<BookFormProps> = (props) => {
             }
             return;
         }
-        handleBookName(bookValue , bookPriceValue , bookAuthorValue);
+        handleBookName({name:bookValue, price:bookPriceValue, author:bookAuthorValue});
         formShow(false);
 
 
@@ -69,7 +70,7 @@ const BookForm: React.FC<BookFormProps> = (props) => {
     useEffect(()=>{
         const selectArray:ISelector[] = [];
         author?.map((authors)=>{
-            selectArray.push({value:authors.name , label:authors.name})
+            selectArray.push({value:authors.id , label:authors.name})
         })
         setSelector(selectArray);
 
@@ -81,14 +82,14 @@ const BookForm: React.FC<BookFormProps> = (props) => {
             setBookPriceValue(e.target.value);
     }
     const handleBookAuthorValue = (e: SingleValue<ISelector>) =>{
-        if(e?.value){
-            setBookAuthorValue(e.value);
+        if(e){
+            setBookAuthorValue({name:e.label , id:e.value});
             setSelectorValidate(false)
         }else{
             setSelectorValidate(true)
         }
     }
-console.log(bookAuthorValue);
+
 
     return (
 
@@ -96,28 +97,28 @@ console.log(bookAuthorValue);
             <Col xs={12} md={8} className="p-0">
                 <h5 className=" m-0 p-0 ">
                     <span className="authorTopic  ">Create Book </span>
-                    <XCircle onClick={()=>formShow(false)} className="closeButton  p-0 me-4 float-end "/>
+                    <XCircle onClick={()=>formShow(false)} className="closeButton  p-0  float-end"/>
                 </h5>
             </Col>
             <Row className="m-2">
                 <Col xs={12} md={8} className="ml-4 p-0 mt-3">
                     <Form noValidate validated={formValidate} onSubmit={handleOnSubmit} className="ml-3">
                         <Form.Group>
-                            <Form.Label className="label">Title of the Book </Form.Label>
+                            <Form.Label className="label mb-0">Title of the Book </Form.Label>
                             <Form.Control size="sm" required type="text"  onChange={handleBook} value={bookValue} />
                             <Form.Control.Feedback type="invalid">
                                 Please enter book title
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label className="label">Price</Form.Label>
-                            <Form.Control size="sm" required type="number" onChange={handleBookPrice} value={bookPriceValue} />
+                            <Form.Label className="label mb-0 mt-2 ">Price</Form.Label>
+                            <Form.Control size="sm"  required type="number" onChange={handleBookPrice} value={bookPriceValue} />
                             <Form.Control.Feedback type="invalid">
                                 Please enter price
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label className="label">Author</Form.Label>
+                            <Form.Label className="label mb-0 mt-2">Author</Form.Label>
                             <Select
                                 onChange={handleBookAuthorValue}
                             className="select-control"
@@ -125,7 +126,7 @@ console.log(bookAuthorValue);
                             isSearchable
                             styles={customStyles}
                             isClearable
-                                value={selector?.filter(option => option.value === bookAuthorValue)}
+                                value={selector?.filter(option => option.value === bookAuthorValue?.id)}
                             options={selector}
                             />
 

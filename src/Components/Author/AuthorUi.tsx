@@ -14,12 +14,16 @@ type AuthorUiProps={
   showForm:boolean;
   setEditAuthor:(editAuthor:IAuthor | null)=>void;
   setIndexToEdit:(number:number | null)=>void;
+  authorValue:string;
+  setAuthorValue:(name:string)=>void;
 }
 
 const AuthorUi: React.FC<AuthorUiProps> = (props) => {
-  const {createAuthor , author , handleEditAuthor , editAuthor , formShow , showForm  , setEditAuthor ,setIndexToEdit} = props ;
+  const {createAuthor , author , handleEditAuthor , editAuthor , formShow , showForm  , setEditAuthor ,setIndexToEdit
+  , authorValue,setAuthorValue } = props ;
 
-  const [authorValue , setAuthorValue ] = useState<string>("");
+
+
 
   const clearForm=()=>{
     setAuthorValue("");
@@ -35,11 +39,11 @@ const AuthorUi: React.FC<AuthorUiProps> = (props) => {
             <h1>Authors</h1>
           </div>
           <div>
-            {author?.length ? <AuthorList author={author} handleEditAuthor={handleEditAuthor} formShow={formShow}/> : <h3>No More Authors</h3>}
+            {author?.length ? <AuthorList author={author} handleEditAuthor={handleEditAuthor} formShow={formShow}/> : <p className={"noItemLabel"}><i>No authors listed here</i></p>}
           </div>
           <div onClick={()=>clearForm()}  >
             <h5 className="addButton mb-5 mt-3">
-              <Plus className="plusIcon pb-1" /> Add Author
+              <Plus className="plusIcon pb-1 me-1" /> Add Author
             </h5>
           </div>
           <div >

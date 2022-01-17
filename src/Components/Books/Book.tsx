@@ -17,7 +17,7 @@ const Book: React.FC <BookProps>= (props) => {
     <Row className="authors my-2 py-0 flex align-items-center">
       <Col xs={10} className="m-0 my-2  p-0">
         <div className=" p-0 m-0">
-          <h5 className=" m-0 p-0">0{index+1}.{oneBook.name}</h5>
+          <h5 className=" m-0 p-0">{index+1}. {oneBook.name}</h5>
         </div>
       </Col>
       <Col xs={2} className="icons px-0 m-0 mb-0 d-flex justify-content-end">
@@ -29,7 +29,7 @@ const Book: React.FC <BookProps>= (props) => {
         <Trash2 className="icons text-danger mx-2 my-0" size={20} onClick={()=>{
             Swal.fire({
                 title: 'Are you sure?',
-                text: 'You won\'t be able to revert this!',
+                text: `Do you want to delete ${oneBook.name} ?`,
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
